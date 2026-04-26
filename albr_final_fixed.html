@@ -1,0 +1,385 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);direction:rtl;background:#F2F7F4;font-size:13px;color:#1A2E1F}
+.app{display:grid;grid-template-columns:188px 1fr;height:630px;border-radius:12px 12px 0 0;overflow:hidden;border:.5px solid #C8DDD0;border-bottom:none;box-shadow:0 4px 20px rgba(26,71,49,.12)}
+.sb{background:#1A4731;display:flex;flex-direction:column;overflow:hidden}
+.sb-logo{padding:12px 11px;border-bottom:1px solid rgba(255,255,255,.09)}
+.sb-t{color:#fff;font-size:13px;font-weight:500}.sb-t em{color:#D4A42A;font-style:normal}
+.sb-s{color:rgba(255,255,255,.38);font-size:10px;margin-top:3px}
+.ns{padding:8px 11px 3px;font-size:10px;color:rgba(255,255,255,.28);letter-spacing:.4px}
+.ni{display:flex;align-items:center;gap:7px;padding:6px 9px;cursor:pointer;border-radius:6px;margin:1px 5px;color:rgba(255,255,255,.52);font-size:11.5px;transition:background .14s;user-select:none}
+.ni:hover{background:rgba(255,255,255,.07);color:#fff}
+.ni.on{background:#2D6A4F;color:#fff}
+.ni i{font-size:13px;width:16px;text-align:center;flex-shrink:0;font-style:normal}
+.nb{margin-right:auto;background:#C0392B;color:#fff;font-size:9px;padding:1px 5px;border-radius:8px;min-width:16px;text-align:center}
+.nb-go{background:#B8860B}.nb-am{background:#D97706}
+.sb-sec{margin:5px 5px 2px;padding:4px 8px;background:rgba(212,164,42,.1);border-radius:5px;border:.5px solid rgba(212,164,42,.22)}
+.sb-sec-l{color:#D4A42A;font-size:10px;font-weight:500}
+.sf{margin-top:auto;padding:8px 11px;border-top:1px solid rgba(255,255,255,.09);display:flex;align-items:center;gap:7px}
+.av{width:27px;height:27px;border-radius:50%;background:#2D6A4F;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:#fff;flex-shrink:0}
+.main{background:#F2F7F4;display:flex;flex-direction:column;overflow:hidden}
+.tb{background:#fff;border-bottom:.5px solid #C8DDD0;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.tb-t{font-size:13px;font-weight:500;color:#1A4731}
+.tb-r{display:flex;align-items:center;gap:7px}
+.live{background:#E8F5EE;color:#2D6A4F;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:500;border:.5px solid #B0CEB8}
+.ts{font-size:11px;color:#5A7A65}
+.ct{padding:10px;overflow-y:auto;flex:1}
+.sc{display:none}.sc.on{display:block}
+.kg{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:9px}
+.kc{background:#fff;border-radius:7px;padding:10px 11px;border:.5px solid #C8DDD0}
+.kl{font-size:10px;color:#5A7A65;margin-bottom:3px}
+.kv{font-size:20px;font-weight:500;color:#1A4731;line-height:1}
+.kd{font-size:10px;margin-top:2px}
+.up{color:#2D6A4F}.dn{color:#C0392B}.nt{color:#5A7A65}
+.g2{display:grid;grid-template-columns:3fr 2fr;gap:7px;margin-bottom:7px}
+.g21{display:grid;grid-template-columns:2fr 1fr;gap:7px;margin-bottom:7px}
+.g22{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:7px}
+.card{background:#fff;border-radius:7px;border:.5px solid #C8DDD0;overflow:hidden;margin-bottom:7px}
+.ch{padding:8px 11px;font-size:11.5px;font-weight:500;color:#1A4731;border-bottom:.5px solid #C8DDD0;display:flex;justify-content:space-between;align-items:center;background:#F0F8F3}
+.ch-s{font-size:10px;color:#5A7A65;font-weight:400}
+.cb{padding:10px 11px}
+.cw{position:relative;width:100%}
+table.ft{width:100%;border-collapse:collapse}
+table.ft th{font-size:10px;color:#5A7A65;font-weight:400;padding:5px 8px;border-bottom:.5px solid #C8DDD0;text-align:right;background:#F8FCF9}
+table.ft td{font-size:11.5px;padding:5px 8px;border-bottom:.5px solid #EEF5F0;vertical-align:middle;text-align:right;color:#1A2E1F}
+table.ft tr:last-child td{border-bottom:none}
+table.ft tr:hover td{background:#F8FCF9}
+.tag{font-size:9.5px;padding:2px 7px;border-radius:9px;white-space:nowrap;display:inline-block;font-weight:500}
+.tn{background:#DBEAFE;color:#1E40AF}.tr{background:#FEF3C7;color:#92400E}.td{background:#E8F5EE;color:#2D6A4F}.tu{background:#FEE2E2;color:#991B1B}.tg{background:#F1F5F0;color:#5A7A65}.ta{background:#F3E8FF;color:#6B21A8}.ti{background:#E0F2FE;color:#075985}.tgo{background:#FFF8E1;color:#B8860B}
+.al{display:flex;gap:7px;padding:6px 0;border-bottom:.5px solid #EEF5F0;font-size:11.5px;align-items:flex-start}
+.al:last-child{border-bottom:none}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.pr{display:flex;align-items:center;gap:7px;margin:4px 0}
+.pl{font-size:11px;width:120px;flex-shrink:0;color:#1A2E1F}
+.pb{flex:1;height:6px;background:#EEF5F0;border-radius:3px;overflow:hidden;border:.5px solid #C8DDD0}
+.pf{height:100%;border-radius:3px}
+.pv{font-size:10px;width:32px;text-align:left;color:#5A7A65;font-weight:500;flex-shrink:0}
+.nf{display:flex;align-items:flex-start;gap:7px;padding:7px 9px;border-radius:5px;margin:4px 0;font-size:11.5px}
+.nf.s{background:#E8F5EE;border:.5px solid #B0CEB8;color:#1A4731}
+.nf.w{background:#FFF7ED;border:.5px solid #FED7AA;color:#9A3412}
+.nf.i{background:#EFF6FF;border:.5px solid #BFDBFE;color:#1E40AF}
+.nf.e{background:#FEF2F2;border:.5px solid #FECACA;color:#991B1B}
+.nf.go{background:#FFF8E1;border:.5px solid #FCD34D;color:#B8860B}
+.pipe{display:flex;gap:5px;margin-bottom:8px}
+.pc{flex:1;background:#fff;border-radius:6px;border:.5px solid #C8DDD0;text-align:center;overflow:hidden}
+.ph{padding:5px;font-size:10px;color:#fff;font-weight:500}
+.pn{font-size:22px;font-weight:500;padding:7px 0 1px;color:#1A4731}
+.ps{font-size:10px;color:#5A7A65;padding-bottom:6px}
+.ir{display:flex;align-items:center;gap:7px;padding:7px 0;border-bottom:.5px solid #EEF5F0;font-size:11.5px}
+.ir:last-child{border-bottom:none}
+.ii{width:30px;height:30px;border-radius:6px;background:#E8F5EE;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;border:.5px solid #C8DDD0}
+.in{flex:1;font-weight:500;color:#1A4731}.is{font-size:10px;color:#5A7A65;margin-top:1px}
+.ist{font-size:10px;padding:2px 7px;border-radius:9px;font-weight:500;white-space:nowrap}
+.lv{background:#E8F5EE;color:#2D6A4F}.pl-st{background:#FFF8E1;color:#B8860B}
+.rh{background:#FEE2E2;color:#991B1B;font-size:9.5px;padding:2px 6px;border-radius:9px}
+.rm{background:#FEF3C7;color:#92400E;font-size:9.5px;padding:2px 6px;border-radius:9px}
+.rl{background:#E8F5EE;color:#2D6A4F;font-size:9.5px;padding:2px 6px;border-radius:9px}
+.gc{border-radius:7px;padding:10px;margin:5px 0;border:.5px solid #C8DDD0}
+.gt{display:flex;align-items:flex-start;gap:8px;margin-bottom:6px}
+.gn{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0}
+.gbar{height:5px;background:#EEF5F0;border-radius:3px;overflow:hidden;border:.5px solid #C8DDD0;margin:4px 0}
+.gfill{height:100%;border-radius:3px}
+.gft{font-size:10px;color:#5A7A65}
+.calc-r{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.calc-l{font-size:11px;color:#1A2E1F;width:185px;flex-shrink:0}
+.calc-v{font-size:12px;font-weight:500;color:#1A4731;width:55px;text-align:left;flex-shrink:0}
+.qp{border-radius:7px;padding:11px;margin-bottom:7px;border:.5px solid #C8DDD0}
+.qh{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.qb{padding:3px 10px;border-radius:10px;font-size:10px;font-weight:500}
+.qi{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.qitem{display:flex;align-items:flex-start;gap:5px;font-size:11px;padding:4px 7px;border-radius:5px}
+.qic{width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;margin-top:1px}
+.footer{background:#1A4731;border-radius:0 0 12px 12px;border:.5px solid #C8DDD0;border-top:none;overflow:hidden}
+.ft-top{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.09)}
+.ft-col{padding:11px 14px;border-left:1px solid rgba(255,255,255,.09)}
+.ft-col:last-child{border-left:none}
+.ft-lbl{font-size:9.5px;color:rgba(255,255,255,.35);letter-spacing:.5px;margin-bottom:4px}
+.ft-val{font-size:11px;color:rgba(255,255,255,.75);line-height:1.65}
+.ft-val strong{color:#D4A42A;font-weight:500}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;padding:7px 14px;background:rgba(0,0,0,.18)}
+.ft-copy{font-size:10px;color:rgba(255,255,255,.38)}
+.ft-copy strong{color:#D4A42A;font-weight:500}
+.ft-badge{display:flex;align-items:center;gap:5px;background:rgba(212,164,42,.12);border:.5px solid rgba(212,164,42,.28);border-radius:20px;padding:3px 9px}
+.ft-bd{width:5px;height:5px;border-radius:50%;background:#D4A42A}
+.ft-bt{font-size:10px;color:#D4A42A}
+</style>
+
+<div class="app">
+<div class="sb">
+  <div class="sb-logo"><div class="sb-t">جمعية <em>البر</em> الأهلية</div><div class="sb-s">Dataverse · Power Platform</div></div>
+  <div class="ns">الرئيسية</div>
+  <div class="ni on" id="n-home"><i>▦</i>لوحة القيادة</div>
+  <div class="ni" id="n-pipe"><i>⊡</i>طلبات المستفيدين<span class="nb">38</span></div>
+  <div class="ns">الفروع والبيانات</div>
+  <div class="ni" id="n-br"><i>⊞</i>الفروع السبعة</div>
+  <div class="ni" id="n-crm"><i>♦</i>CRM المتبرعين</div>
+  <div class="ni" id="n-vol"><i>◉</i>المتطوعون</div>
+  <div class="ns">الذكاء والحوكمة</div>
+  <div class="ni" id="n-ai"><i>✦</i>تنبيهات AI<span class="nb nb-am">5</span></div>
+  <div class="ni" id="n-impact"><i>◎</i>الأثر SROI</div>
+  <div class="ni" id="n-risk"><i>⚑</i>إدارة المخاطر<span class="nb nb-go">11</span></div>
+  <div class="ni" id="n-int"><i>⊛</i>التكاملات</div>
+  <div class="sb-sec"><div class="sb-sec-l">شاشات الإقناع</div></div>
+  <div class="ni" id="n-smart"><i>◈</i>أهداف SMART</div>
+  <div class="ni" id="n-roi"><i>≈</i>حاسبة العائد ROI</div>
+  <div class="ni" id="n-qw"><i>⚡</i>Quick Win — الشهر 1</div>
+  <div class="sf"><div class="av">ثم</div><div><div style="color:#fff;font-size:11px;font-weight:500">د. ثامر بن ناصر</div><div style="color:rgba(255,255,255,.38);font-size:10px">الأمين العام</div></div></div>
+</div>
+<div class="main">
+  <div class="tb"><div class="tb-t" id="pg-t">لوحة القيادة الموحدة</div><div class="tb-r"><span class="live">● مباشر</span><span class="ts" id="sync-t">آخر تحديث: Dataverse</span></div></div>
+  <div class="ct">
+    <div class="sc on" id="s-home">
+      <div class="kg">
+        <div class="kc"><div class="kl">أسر مدعومة — الشهر</div><div class="kv">1,247</div><div class="kd up">▲ 8% عن الشهر الماضي</div></div>
+        <div class="kc"><div class="kl">طلبات قيد المراجعة</div><div class="kv" style="color:#D97706">38</div><div class="kd dn">12 طلب جديد اليوم</div></div>
+        <div class="kc"><div class="kl">تبرعات اليوم (ريال)</div><div class="kv" id="k-don">42,800</div><div class="kd up">▲ 23% من هدف الشهر</div></div>
+        <div class="kc"><div class="kl">متطوعون نشطون</div><div class="kv">164</div><div class="kd up">▲ 31 هذا الأسبوع</div></div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ch">أداء الفروع السبعة <span class="ch-s">Dataverse فوري</span></div><div class="cb"><div class="cw" style="height:155px"><canvas id="c-br"></canvas></div></div></div>
+        <div class="card"><div class="ch">تدفق التبرعات <span class="ch-s">6 أشهر</span></div><div class="cb"><div class="cw" style="height:155px"><canvas id="c-don"></canvas></div></div></div>
+      </div>
+      <div class="g3">
+        <div class="card"><div class="ch">آخر الطلبات <span class="ch-s">فوري</span></div><div class="cb" id="h-req"></div></div>
+        <div class="card"><div class="ch">تنبيهات ذكية <span class="ch-s">AI+IoT</span></div><div class="cb" id="h-al"></div></div>
+        <div class="card"><div class="ch">مؤشرات الأثر</div><div class="cb" id="h-sroi"></div></div>
+      </div>
+    </div>
+    <div class="sc" id="s-pipe">
+      <div class="pipe" id="pipe-st"></div>
+      <div id="pipe-nf"></div>
+      <div class="card"><div class="ch">جميع الطلبات <span class="ch-s">7 فروع — Dataverse (م1)</span></div><div style="overflow-x:auto"><table class="ft" id="pipe-tbl"></table></div></div>
+    </div>
+    <div class="sc" id="s-br">
+      <div class="kg">
+        <div class="kc"><div class="kl">أعلى أداء</div><div class="kv" style="font-size:14px;color:#2D6A4F">شمال الرياض</div><div class="kd up">287 أسرة</div></div>
+        <div class="kc"><div class="kl">يحتاج دعماً</div><div class="kv" style="font-size:14px;color:#C0392B">الشفا</div><div class="kd dn">102 أسرة فقط</div></div>
+        <div class="kc"><div class="kl">زيارات الأسبوع</div><div class="kv">934</div><div class="kd up">▲ 12%</div></div>
+        <div class="kc"><div class="kl">تزامن البيانات</div><div class="kv" style="color:#2D6A4F">7/7</div><div class="kd up">كل الفروع (م6)</div></div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ch">مقارنة الفروع <span class="ch-s">م6 Power Apps</span></div><div class="cb"><div class="cw" style="height:180px"><canvas id="c-br2"></canvas></div></div></div>
+        <div class="card"><div class="ch">مستودعات IoT <span class="ch-s">م13</span></div><div class="cb" id="iot-b"></div></div>
+      </div>
+      <div class="card"><div class="ch">تفاصيل الفروع السبعة</div><div style="overflow-x:auto"><table class="ft" id="br-tbl"></table></div></div>
+      <div class="nf w" id="br-warn"></div>
+    </div>
+    <div class="sc" id="s-crm">
+      <div class="kg">
+        <div class="kc"><div class="kl">متبرعون نشطون</div><div class="kv">1,843</div><div class="kd up">▲ 12%</div></div>
+        <div class="kc"><div class="kl">خطر التوقف (AI)</div><div class="kv" style="color:#C0392B">47</div><div class="kd dn">يحتاج تواصلاً</div></div>
+        <div class="kc"><div class="kl">متوسط التبرع</div><div class="kv">2,340</div><div class="kd nt">ريال/شهر</div></div>
+        <div class="kc"><div class="kl">معدل التكرار</div><div class="kv" style="color:#2D6A4F">67%</div><div class="kd up">▲ 5%</div></div>
+      </div>
+      <div class="g21">
+        <div class="card"><div class="ch">قاعدة المتبرعين <span class="ch-s">م4+م7+م12</span></div><div style="overflow-x:auto"><table class="ft" id="crm-tbl"></table></div></div>
+        <div class="card"><div class="ch">قنوات التبرع</div><div class="cb"><div class="cw" style="height:135px"><canvas id="c-pie"></canvas></div></div><div class="cb" style="padding-top:0" id="crm-nf"></div></div>
+      </div>
+    </div>
+    <div class="sc" id="s-vol">
+      <div class="kg">
+        <div class="kc"><div class="kl">مسجلون</div><div class="kv">1,284</div><div class="kd up">إشراك (م8)</div></div>
+        <div class="kc"><div class="kl">نشطون الشهر</div><div class="kv" style="color:#2D6A4F">164</div><div class="kd up">▲ 31</div></div>
+        <div class="kc"><div class="kl">ساعات موثقة</div><div class="kv">3,847</div><div class="kd up">هذا الشهر</div></div>
+        <div class="kc"><div class="kl">شهادات صادرة</div><div class="kv">238</div><div class="kd up">تلقائية</div></div>
+      </div>
+      <div class="g21">
+        <div class="card"><div class="ch">توزيع الفروع <span class="ch-s">م8+إشراك</span></div><div class="cb"><div class="cw" style="height:170px"><canvas id="c-vol"></canvas></div></div></div>
+        <div class="card"><div class="ch">التكامل مع إشراك</div><div class="cb" id="vol-int"></div></div>
+      </div>
+      <div class="card"><div class="ch">سجل المتطوعين</div><div style="overflow-x:auto"><table class="ft" id="vol-tbl"></table></div></div>
+    </div>
+    <div class="sc" id="s-ai">
+      <div class="kg">
+        <div class="kc"><div class="kl">تنبيهات نشطة</div><div class="kv" style="color:#C0392B">5</div><div class="kd dn">تحتاج إجراء</div></div>
+        <div class="kc"><div class="kl">ازدواجية مكتشفة</div><div class="kv" style="color:#D97706">3</div><div class="kd nt">م12 AI</div></div>
+        <div class="kc"><div class="kl">دقة النموذج</div><div class="kv" style="color:#2D6A4F">91%</div><div class="kd up">▲ 6%</div></div>
+        <div class="kc"><div class="kl">مراجعة بشرية</div><div class="kv">100%</div><div class="kd nt">AI مساعد</div></div>
+      </div>
+      <div class="g22">
+        <div class="card"><div class="ch">تنبيهات الأولوية</div><div class="cb" id="ai-al"></div></div>
+        <div class="card"><div class="ch">أداء نماذج AI</div><div class="cb"><div class="cw" style="height:125px"><canvas id="c-ai"></canvas></div></div><div class="cb" style="padding-top:0" id="ai-perf"></div></div>
+      </div>
+      <div class="card"><div class="ch">سجل قرارات AI <span class="ch-s">مراجعة بشرية إلزامية</span></div><div style="overflow-x:auto"><table class="ft" id="ai-tbl"></table></div></div>
+    </div>
+    <div class="sc" id="s-impact">
+      <div class="kg">
+        <div class="kc"><div class="kl">SROI الحالي</div><div class="kv" style="color:#2D6A4F">3.2:1</div><div class="kd up">▲ 0.3 هذا الربع</div></div>
+        <div class="kc"><div class="kl">أسر استقلت</div><div class="kv">234</div><div class="kd up">خرجت من الدعم</div></div>
+        <div class="kc"><div class="kl">رضا المستفيدين</div><div class="kv">81%</div><div class="kd up">▲ 6%</div></div>
+        <div class="kc"><div class="kl">تقرير نافع</div><div class="kv" style="color:#2D6A4F;font-size:13px">تلقائي</div><div class="kd up">م10+م9</div></div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ch">SROI ربع سنوي <span class="ch-s">م10+نافع</span></div><div class="cb"><div class="cw" style="height:160px"><canvas id="c-sroi"></canvas></div></div></div>
+        <div class="card"><div class="ch">سلسلة الأثر</div><div class="cb" id="toc"></div></div>
+      </div>
+      <div class="card"><div class="ch">رضا المستفيدين <span class="ch-s">م3 — استبيان 2024</span></div><div class="cb" id="sat-b"></div></div>
+    </div>
+    <div class="sc" id="s-risk">
+      <div class="kg">
+        <div class="kc"><div class="kl">مخاطر مُراقَبة</div><div class="kv" style="color:#D97706">11</div><div class="kd nt">الاستراتيجية</div></div>
+        <div class="kc"><div class="kl">عالية الأثر</div><div class="kv" style="color:#C0392B">6</div><div class="kd dn">اهتمام فوري</div></div>
+        <div class="kc"><div class="kl">خطط الاستجابة</div><div class="kv" style="color:#2D6A4F">11/11</div><div class="kd up">لكل خطر حل</div></div>
+        <div class="kc"><div class="kl">Rollback جاهز</div><div class="kv" style="color:#2D6A4F">✓</div><div class="kd up">لكل مرحلة</div></div>
+      </div>
+      <div class="g21">
+        <div class="card"><div class="ch">سجل المخاطر الكامل <span class="ch-s">م11</span></div><div style="overflow-x:auto"><table class="ft" id="risk-tbl"></table></div></div>
+        <div class="card"><div class="ch">توزيع الخطورة</div><div class="cb"><div class="cw" style="height:135px"><canvas id="c-risk"></canvas></div></div><div class="cb" style="padding-top:0" id="risk-leg"></div></div>
+      </div>
+      <div id="risk-nf"></div>
+    </div>
+    <div class="sc" id="s-int">
+      <div class="kg">
+        <div class="kc"><div class="kl">منصات مربوطة</div><div class="kv" style="color:#2D6A4F">3/4</div><div class="kd up">نفاذ قيد الربط</div></div>
+        <div class="kc"><div class="kl">سجلات Dataverse</div><div class="kv">48,291</div><div class="kd up">▲ 127 اليوم</div></div>
+        <div class="kc"><div class="kl">استدعاءات API</div><div class="kv">1,847</div><div class="kd up">ناجحة</div></div>
+        <div class="kc"><div class="kl">آخر مزامنة</div><div class="kv" style="color:#2D6A4F;font-size:13px">منذ دقيقتين</div><div class="kd up">7 فروع+4 أنظمة</div></div>
+      </div>
+      <div class="g22">
+        <div class="card"><div class="ch">الأنظمة القائمة</div><div class="cb" id="sys-int"></div></div>
+        <div class="card"><div class="ch">المنصات الوطنية <span class="ch-s">م9</span></div><div class="cb" id="nat-int"></div></div>
+      </div>
+      <div class="card"><div class="ch">خريطة المبادرات 14</div><div style="overflow-x:auto"><table class="ft" id="init-tbl"></table></div></div>
+      <div class="card"><div class="ch">حجم البيانات المُزامَنة</div><div class="cb"><div class="cw" style="height:90px"><canvas id="c-sync"></canvas></div></div></div>
+    </div>
+    <div class="sc" id="s-smart">
+      <div class="kg">
+        <div class="kc"><div class="kl">أهداف SMART</div><div class="kv">7</div><div class="kd nt">بمؤشر+إطار زمني</div></div>
+        <div class="kc"><div class="kl">مُنجَز</div><div class="kv" style="color:#2D6A4F">2</div><div class="kd up">PDPL+إشراك</div></div>
+        <div class="kc"><div class="kl">قيد التنفيذ</div><div class="kv" style="color:#D97706">3</div><div class="kd nt">المرحلة الأولى</div></div>
+        <div class="kc"><div class="kl">مُخطط</div><div class="kv">2</div><div class="kd nt">مرحلة 2-3</div></div>
+      </div>
+      <div class="g21"><div id="goals-list" style="margin-bottom:7px"></div><div><div class="card"><div class="ch">نضج رقمي <span class="ch-s">Deloitte DMM</span></div><div class="cb"><div class="cw" style="height:190px"><canvas id="c-radar"></canvas></div></div></div><div class="card"><div class="ch">الإطار الزمني</div><div class="cb" id="timeline"></div></div></div></div>
+    </div>
+    <div class="sc" id="s-roi">
+      <div class="kg">
+        <div class="kc"><div class="kl">ساعات هدر أسبوعياً</div><div class="kv" id="k-hrs">91</div><div class="kd nt">7 فروع</div></div>
+        <div class="kc"><div class="kl">توفير سنوي</div><div class="kv" id="k-sh" style="color:#2D6A4F">3,822</div><div class="kd up">ساعة/سنة</div></div>
+        <div class="kc"><div class="kl">قيمة الوقت المُوفَّر</div><div class="kv" id="k-sr" style="color:#2D6A4F">286,650</div><div class="kd up">ريال/سنة</div></div>
+        <div class="kc"><div class="kl">الاسترداد الكامل</div><div class="kv" id="k-pay" style="color:#B8860B">10</div><div class="kd nt">أشهر فقط</div></div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ch">اضبط المتغيرات</div><div class="cb" id="calc-in"></div></div>
+        <div class="card"><div class="ch">توزيع ساعات الهدر</div><div class="cb"><div class="cw" style="height:190px"><canvas id="c-waste"></canvas></div></div></div>
+      </div>
+      <div class="card"><div class="ch">التكاليف والعوائد التراكمية — 5 سنوات</div><div class="cb"><div class="cw" style="height:150px"><canvas id="c-roi"></canvas></div></div></div>
+    </div>
+    <div class="sc" id="s-qw">
+      <div class="kg">
+        <div class="kc"><div class="kl">استثمار إضافي</div><div class="kv" style="color:#2D6A4F">0 ريال</div><div class="kd up">فوق M365 الحالية</div></div>
+        <div class="kc"><div class="kl">أول مخرج ملموس</div><div class="kv" style="color:#2D6A4F">30 يوماً</div><div class="kd up">من بدء التنفيذ</div></div>
+        <div class="kc"><div class="kl">فروع تستفيد</div><div class="kv">7/7</div><div class="kd up">Power Apps</div></div>
+        <div class="kc"><div class="kl">نوع المخرج</div><div class="kv" style="font-size:12px;color:#2D6A4F">Proof of Concept</div><div class="kd up">بيانات حقيقية</div></div>
+      </div>
+      <div id="phases-list"></div>
+      <div class="card"><div class="ch">لقاء القرار — نهاية الشهر الأول</div><div class="cb"><div style="font-size:13px;font-weight:500;color:#1A4731;margin-bottom:8px;line-height:1.6">"بعد 30 يوماً بدون ريال إضافي — هل نرى فرقاً حقيقياً؟"</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px" id="win-m"></div></div></div>
+      <div class="card"><div class="ch">مخاطر شهر الإثبات</div><div class="cb" id="qw-risks"></div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">
+  <div class="ft-top">
+    <div class="ft-col">
+      <div class="ft-lbl">فريق التنفيذ — صنّاع التغيير</div>
+      <div class="ft-val"><strong>حنين الزكري</strong> · <strong>هنادي العتيبي</strong><br><strong>فارس اليحيى</strong> · <strong>عبدالعزيز السهلي</strong> · <strong>عمران العمران</strong></div>
+    </div>
+    <div class="ft-col">
+      <div class="ft-lbl">المقرر الأكاديمي والإشراف</div>
+      <div class="ft-val">مقرر: <strong>التحول الرقمي</strong><br>الدبلوم المهني — جامعة المعرفة<br>إشراف: <strong>أ.د. فهد بن مزيد العضياني</strong></div>
+    </div>
+    <div class="ft-col">
+      <div class="ft-lbl">حالة المشروع</div>
+      <div class="ft-val"><strong>بروتوتايب تفاعلي</strong> — التحول الرقمي<br>جمعية البر الأهلية بالرياض<br><strong>1447هـ / 2026م</strong></div>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div class="ft-copy">© 1447هـ / 2026م — جميع الحقوق محفوظة لفريق <strong>صنّاع التغيير</strong> — الدبلوم المهني في التحول الرقمي — جامعة المعرفة</div>
+    <div class="ft-badge"><div class="ft-bd"></div><div class="ft-bt">Microsoft Power Platform · Dataverse · Azure AI</div></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+var G1='#1A4731',G2='#2D6A4F',G3='#52936E',G4='#E8F5EE',GO='#B8860B',GO2='#D4A42A',RD='#C0392B',AM='#D97706',MU='#5A7A65',BD='#C8DDD0',BG='#F2F7F4',TX='#1A2E1F';
+var CH={},LDd={};
+
+/* ── الإصلاح: متغير منفصل لتتبع قيمة التبرعات ── */
+var DON_AMOUNT = 42800;
+
+var PAGES={home:'لوحة القيادة الموحدة',pipe:'طلبات المستفيدين',br:'الفروع السبعة',crm:'CRM المتبرعين',vol:'إدارة المتطوعين',ai:'تنبيهات الذكاء والـ IoT',impact:'قياس الأثر SROI',risk:'إدارة المخاطر التشغيلية',int:'التكاملات والمبادرات',smart:'أهداف SMART',roi:'حاسبة العائد',qw:'Quick Win — الشهر الأول'};
+var IDS=['home','pipe','br','crm','vol','ai','impact','risk','int','smart','roi','qw'];
+
+function go(id){
+  IDS.forEach(function(x){var s=document.getElementById('s-'+x);var n=document.getElementById('n-'+x);if(s)s.classList.remove('on');if(n)n.classList.remove('on');});
+  var s=document.getElementById('s-'+id);var n=document.getElementById('n-'+id);
+  if(s)s.classList.add('on');if(n)n.classList.add('on');
+  document.getElementById('pg-t').textContent=PAGES[id]||'';
+  if(!LDd[id]){LDd[id]=1;build(id);}
+}
+IDS.forEach(function(id){var el=document.getElementById('n-'+id);if(el)el.onclick=function(){go(id);};});
+
+var BASE={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:10},color:MU}},y:{grid:{color:'#EEF5F0',lineWidth:.5},ticks:{font:{size:10},color:MU},beginAtZero:true}}};
+function noSc(){return{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},boxWidth:10,padding:7}}}};}
+function withLg(){var o=JSON.parse(JSON.stringify(BASE));o.plugins.legend={display:true,position:'top',labels:{font:{size:10},boxWidth:10,padding:7}};return o;}
+function mkC(id,type,labels,datasets,opts){var el=document.getElementById(id);if(!el||CH[id])return;try{CH[id]=new Chart(el,{type:type,data:{labels:labels,datasets:datasets},options:opts||BASE});}catch(e){}}
+function tag(cls,txt){var s=document.createElement('span');s.className='tag '+cls;s.textContent=txt;return s;}
+function nf(cls,txt){var d=document.createElement('div');d.className='nf '+cls;d.textContent=txt;return d;}
+function pr(lbl,pct,clr){var d=document.createElement('div');d.className='pr';var l=document.createElement('div');l.className='pl';l.textContent=lbl;var b=document.createElement('div');b.className='pb';var f=document.createElement('div');f.className='pf';f.style.cssText='width:'+pct+'%;background:'+clr;b.appendChild(f);var v=document.createElement('div');v.className='pv';v.textContent=pct+'%';d.appendChild(l);d.appendChild(b);d.appendChild(v);return d;}
+function alRow(dc,mn,sb,tc,tt){var d=document.createElement('div');d.className='al';var dot=document.createElement('div');dot.className='dot';dot.style.background=dc;var body=document.createElement('div');body.style.flex='1';var m=document.createElement('div');m.style.cssText='font-weight:500;font-size:11.5px;color:'+TX;m.textContent=mn;body.appendChild(m);if(sb){var s=document.createElement('div');s.style.cssText='color:'+MU+';font-size:10.5px;margin-top:1px';s.textContent=sb;body.appendChild(s);}var tg=tag(tc,tt);d.appendChild(dot);d.appendChild(body);d.appendChild(tg);return d;}
+function irRow(ic,nm,sb,sc,st){var d=document.createElement('div');d.className='ir';var i=document.createElement('div');i.className='ii';i.textContent=ic;var info=document.createElement('div');info.style.flex='1';var n=document.createElement('div');n.className='in';n.textContent=nm;var s=document.createElement('div');s.className='is';s.textContent=sb;info.appendChild(n);info.appendChild(s);var sp=document.createElement('span');sp.className='ist '+sc;sp.textContent=st;d.appendChild(i);d.appendChild(info);d.appendChild(sp);return d;}
+function mkTh(cols){var tr=document.createElement('tr');tr.className='hr';cols.forEach(function(c){var th=document.createElement('th');th.textContent=c;tr.appendChild(th);});return tr;}
+function mkTag(cls,txt){var s=document.createElement('span');s.className=cls;s.textContent=txt;return s;}
+function build(id){if(id==='home')bHome();else if(id==='pipe')bPipe();else if(id==='br')bBr();else if(id==='crm')bCrm();else if(id==='vol')bVol();else if(id==='ai')bAi();else if(id==='impact')bImpact();else if(id==='risk')bRisk();else if(id==='int')bInt();else if(id==='smart')bSmart();else if(id==='roi')bRoi();else if(id==='qw')bQw();}
+
+function bHome(){
+  mkC('c-br','bar',['شمال','فيحاء','عريجاء','روضة','غرب','معكال','الشفا'],[{data:[287,231,198,176,154,139,102],backgroundColor:[G2,G2,G3,G3,GO2,AM,RD],borderRadius:4}],BASE);
+  mkC('c-don','line',['رجب','شعبان','رمضان','شوال','ذو القعدة','ذو الحجة'],[{data:[38200,42100,45800,39400,89200,42800],borderColor:G2,backgroundColor:'rgba(45,106,79,.1)',fill:true,tension:.4,pointRadius:3,pointBackgroundColor:G2}],BASE);
+  var req=document.getElementById('h-req');
+  [['#2401','الزهراني — الروضة',RD,'tn','جديد'],['#2400','العتيبي — شمال',AM,'tr','مراجعة'],['#2399','القحطاني — العريجاء',G2,'td','مكتمل'],['#2398','الغامدي — غرب',AM,'tr','مراجعة'],['#2397','الشهري — فيحاء',G2,'td','مكتمل']].forEach(function(r){req.appendChild(alRow(r[2],r[0]+' — '+r[1],'',r[3],r[4]));});
+  var al=document.getElementById('h-al');
+  al.appendChild(alRow(RD,'ازدواجية محتملة: أسرة #2401','في فرعَي الروضة والفيحاء','ta','AI'));
+  al.appendChild(alRow(AM,'47 متبرع — خطر التوقف','90+ يوم بدون تبرع','ta','Churn'));
+  al.appendChild(alRow('#0E7490','مخزون الشفا: 12 سلة','أقل من الحد 20','ti','IoT'));
+  al.appendChild(alRow(G2,'234 أسرة وصلت الاستقلالية','خرجت من قائمة الدعم','td','SROI'));
+  var sr=document.getElementById('h-sroi');
+  var top=document.createElement('div');top.style.cssText='text-align:center;padding:6px 0';
+  var big=document.createElement('div');big.style.cssText='font-size:26px;font-weight:500;color:'+G2;big.textContent='3.2 : 1';
+  var sub=document.createElement('div');sub.style.cssText='font-size:10px;color:'+MU;sub.textContent='ريال أثر لكل ريال مُنفق';
+  top.appendChild(big);top.appendChild(sub);
+  var bar=document.createElement('div');bar.style.cssText='background:#EEF5F0;border-radius:4px;height:6px;overflow:hidden;margin:7px 0 3px;border:.5px solid '+BD;
+  var fill=document.createElement('div');fill.style.cssText='width:64%;height:100%;background:'+G2+';border-radius:4px';bar.appendChild(fill);
+  var lbl=document.createElement('div');lbl.style.cssText='display:flex;justify-content:space-between;font-size:10px;color:'+MU+';margin-bottom:7px';lbl.innerHTML='<span>الحالي 3.2</span><span>الهدف 3.5</span>';
+  sr.appendChild(top);sr.appendChild(bar);sr.appendChild(lbl);
+  sr.appendChild(pr('رضا المستفيدين',81,G2));sr.appendChild(pr('رضا الموظفين',74,GO2));sr.appendChild(pr('امتثال PDPL',90,G2));
+}
+function bPipe(){var st=document.getElementById('pipe-st');[{l:'وارد جديد',n:12,s:'اليوم',c:MU},{l:'تحقق ميداني',n:8,s:'انتظار',c:AM},{l:'لجنة المراجعة',n:11,s:'معلق',c:'#0E7490'},{l:'اعتماد الأمين',n:7,s:'ينتظر',c:G1},{l:'صرف الدعم',n:94,s:'هذا الشهر',c:G2}].forEach(function(x){var p=document.createElement('div');p.className='pc';var ph=document.createElement('div');ph.className='ph';ph.style.background=x.c;ph.textContent=x.l;var pn=document.createElement('div');pn.className='pn';pn.textContent=x.n;var ps=document.createElement('div');ps.className='ps';ps.textContent=x.s;p.appendChild(ph);p.appendChild(pn);p.appendChild(ps);st.appendChild(p);});var pnf=document.getElementById('pipe-nf');pnf.appendChild(nf('e','⚠ 7 طلبات تجاوزت 14 يوماً — Power Automate أرسل تنبيهاً تلقائياً (م3)'));pnf.appendChild(nf('i','🔍 AI كشف 3 طلبات مكررة محتملة — تحتاج مراجعة بشرية (م12)'));var tbl=document.getElementById('pipe-tbl');tbl.appendChild(mkTh(['رقم','الأسرة والفرع','المرحلة','الأيام','تقييم AI','مستوى الحاجة']));[['#2401','الزهراني — الروضة','tn','جديد','1','ta','ازدواجية؟','tu','عالية',false],['#2400','العتيبي — شمال','tr','مراجعة','3','td','سليم','tu','عالية',false],['#2399','القحطاني — العريجاء','td','مكتمل','7','td','سليم','tr','متوسطة',false],['#2398','الغامدي — غرب','tr','مراجعة','14','tu','تأخر','tu','عالية',true],['#2397','الشهري — فيحاء','td','مكتمل','5','td','سليم','tr','متوسطة',false],['#2396','السبيعي — معكال','td','مكتمل','2','td','سليم','tg','منخفضة',false],['#2395','الحربي — الشفا','tr','تحقق','9','tg','—','tu','عالية',false],['#2394','المطيري — الروضة','td','مكتمل','6','td','سليم','tr','متوسطة',false]].forEach(function(r){var tr=document.createElement('tr');tr.className='dr';if(r[9])tr.style.background='#FFF8F8';var t1=document.createElement('td');t1.textContent=r[0];var t2=document.createElement('td');t2.textContent=r[1];var t3=document.createElement('td');t3.appendChild(tag(r[2],r[3]));var t4=document.createElement('td');t4.textContent=r[4];if(parseInt(r[4])>10)t4.style.color=RD;var t5=document.createElement('td');t5.appendChild(tag(r[5],r[6]));var t6=document.createElement('td');t6.appendChild(tag(r[7],r[8]));tr.appendChild(t1);tr.appendChild(t2);tr.appendChild(t3);tr.appendChild(t4);tr.appendChild(t5);tr.appendChild(t6);tbl.appendChild(tr);});}
+function bBr(){var o=JSON.parse(JSON.stringify(BASE));o.plugins.legend={display:true,position:'bottom',labels:{font:{size:10},boxWidth:10,padding:7}};mkC('c-br2','bar',['شمال','فيحاء','عريجاء','روضة','غرب','معكال','الشفا'],[{label:'مستفيدون',data:[287,231,198,176,154,139,102],backgroundColor:G2,borderRadius:3},{label:'زيارات',data:[142,118,97,89,78,65,53],backgroundColor:GO2,borderRadius:3}],o);var iot=document.getElementById('iot-b');[['شمال الرياض',78,G2],['الفيحاء',62,G2],['العريجاء',55,G3],['الروضة',48,GO2],['غرب الرياض',41,GO2],['معكال',35,AM],['الشفا',17,RD]].forEach(function(r){iot.appendChild(pr(r[0],r[1],r[2]));});iot.appendChild(nf('w','⚠ الشفا: طلب تزويد تلقائي (م13 IoT)'));var tbl=document.getElementById('br-tbl');tbl.appendChild(mkTh(['الفرع','مستفيدون','زيارات','متطوعون','مخزون','تزامن']));[['شمال الرياض',287,142,31,'78%',G2,'2 د'],['الفيحاء',231,118,24,'62%',G2,'3 د'],['العريجاء',198,97,18,'55%',G3,'1 د'],['الروضة',176,89,22,'48%',GO2,'5 د'],['غرب الرياض',154,78,15,'41%',GO2,'2 د'],['معكال',139,65,12,'35%',AM,'4 د'],['الشفا',102,53,8,'17%',RD,'3 د']].forEach(function(r){var tr=document.createElement('tr');tr.className='dr';if(r[1]<120)tr.style.background='#FFF8F8';var t1=document.createElement('td');t1.textContent=r[0];if(r[1]<120)t1.style.cssText='font-weight:500;color:'+RD;var t2=document.createElement('td');t2.textContent=r[1];t2.style.color=(r[1]<120)?RD:(r[1]>200)?G2:AM;var t3=document.createElement('td');t3.textContent=r[2];var t4=document.createElement('td');t4.textContent=r[3];t4.style.color=G2;var t5=document.createElement('td');var sp=document.createElement('span');sp.className='tag';sp.textContent=r[4];var pct=parseInt(r[4]);sp.style.cssText='background:'+(pct<30?'#FEE2E2':pct<50?'#FEF3C7':G4)+';color:'+(pct<30?RD:pct<50?AM:G2);t5.appendChild(sp);var t6=document.createElement('td');t6.textContent=r[6];t6.style.cssText='color:'+MU+';font-size:10.5px';tr.appendChild(t1);tr.appendChild(t2);tr.appendChild(t3);tr.appendChild(t4);tr.appendChild(t5);tr.appendChild(t6);tbl.appendChild(tr);});document.getElementById('br-warn').textContent='⚠ فرع الشفا: مخزون السلال 12/70 — طلب تزويد أُرسل تلقائياً (م13)';}
+function bCrm(){var tbl=document.getElementById('crm-tbl');tbl.appendChild(mkTh(['المتبرع','آخر تبرع','المبلغ/شهر','الإجمالي','حالة AI']));[['أحمد الحربي','3 أيام','5,200','62,400','td','نشط',false],['سعد العتيبي','93 يوماً','2,500','30,000','tu','خطر توقف',true],['منال الشمري','أسبوع','1,200','14,400','td','نشط',false],['فهد القحطاني','89 يوماً','800','9,600','tu','خطر توقف',true],['نورة السبيعي','يومان','3,000','36,000','td','نشط',false],['خالد الدوسري','45 يوماً','4,500','54,000','tr','مراقبة',false],['رهف المالكي','أسبوعان','1,800','21,600','td','نشط',false]].forEach(function(r){var tr=document.createElement('tr');tr.className='dr';if(r[6])tr.style.background='#FFF8F8';var t1=document.createElement('td');t1.textContent=r[0];if(r[6])t1.style.cssText='font-weight:500;color:'+RD;var t2=document.createElement('td');t2.textContent=r[1];if(r[6])t2.style.color=RD;var t3=document.createElement('td');t3.textContent=r[2];t3.style.cssText='color:'+G2+';font-weight:500';var t4=document.createElement('td');t4.textContent=r[3];t4.style.color=MU;var t5=document.createElement('td');t5.appendChild(tag(r[4],r[5]));tr.appendChild(t1);tr.appendChild(t2);tr.appendChild(t3);tr.appendChild(t4);tr.appendChild(t5);tbl.appendChild(tr);});mkC('c-pie','doughnut',['منصة جود','SMS 5052','مباشر','تحويل بنكي'],[{data:[58,12,18,12],backgroundColor:[G2,G3,GO2,G1],borderWidth:2}],noSc());var cn=document.getElementById('crm-nf');cn.appendChild(nf('s','✓ SMS 5052: 28 تبرع — مُزامَن مع CRM (م4)'));cn.appendChild(nf('i','↑ حملة تواصل لـ 47 متبرع — غداً (م12)'));}
+function bVol(){mkC('c-vol','bar',['شمال','فيحاء','عريجاء','روضة','غرب','معكال','الشفا'],[{data:[31,24,18,22,15,12,8],backgroundColor:G2,borderRadius:4}],BASE);var vi=document.getElementById('vol-int');vi.appendChild(nf('s','✓ آخر مزامنة مع إشراك: منذ 8 دقائق'));vi.appendChild(nf('s','✓ الشهادات التلقائية خلال 24 ساعة'));vi.appendChild(nf('i','ℹ هدف مليون متطوع: 3,847 ساعة هذا الشهر'));vi.appendChild(pr('هدف الشهر',77,G2));vi.appendChild(pr('التوثيق الرقمي',92,G2));vi.appendChild(pr('رضا المتطوع',85,GO2));var tbl=document.getElementById('vol-tbl');tbl.appendChild(mkTh(['المتطوع','الساعات','الفرع','التخصص','الشهادة','إشراك']));[['محمد الأحمد',48,'شمال الرياض','توزيع مساعدات','td','صادرة'],['سارة العمري',32,'الفيحاء','تأهيل وتدريب','td','صادرة'],['عبدالله السالم',29,'العريجاء','زيارات ميدانية','tr','قيد الإصدار'],['ريم الخالد',41,'الروضة','إدارة مستودع','td','صادرة'],['يوسف الغامدي',18,'الشفا','نقل مساعدات','tg','لم تكتمل']].forEach(function(r){var tr=document.createElement('tr');tr.className='dr';var t1=document.createElement('td');t1.textContent=r[0];t1.style.fontWeight='500';var t2=document.createElement('td');t2.textContent=r[1];t2.style.cssText='color:'+G2+';font-weight:500';var t3=document.createElement('td');t3.textContent=r[2];var t4=document.createElement('td');t4.textContent=r[3];var t5=document.createElement('td');t5.appendChild(tag(r[4],r[5]));var t6=document.createElement('td');t6.appendChild(tag('ti','مُزامَن'));[t1,t2,t3,t4,t5,t6].forEach(function(t){tr.appendChild(t);});tbl.appendChild(tr);});}
+function bAi(){var al=document.getElementById('ai-al');al.appendChild(alRow(RD,'ازدواجية: أسرة #2401','الروضة والفيحاء في يوم واحد','ta','ازدواجية'));al.appendChild(alRow(RD,'ازدواجية: أسرة #2389','نفس رقم الهوية في فرعين','ta','ازدواجية'));al.appendChild(alRow(AM,'47 متبرع: خطر التوقف','78% احتمال انسحاب','ta','Churn'));al.appendChild(alRow('#0E7490','مخزون الشفا: 12/70','طلب تزويد تلقائي','ti','IoT م13'));al.appendChild(alRow(G2,'نافع: تقرير مُرفَع','الإفصاح الربعي تلقائياً','td','نافع'));mkC('c-ai','bar',['صحيح','خاطئ','ازدواجية','غير محدد'],[{data:[91,4,3,2],backgroundColor:[G2,RD,AM,MU],borderRadius:4}],BASE);var ap=document.getElementById('ai-perf');ap.appendChild(pr('تصنيف الطلبات',91,G2));ap.appendChild(pr('كشف ازدواجية',87,G3));ap.appendChild(pr('توقع Churn',78,GO2));var tbl=document.getElementById('ai-tbl');tbl.appendChild(mkTh(['الحدث','توصية AI','الثقة','قرار الموظف','النتيجة']));[['طلب #2389 — ازدواجية','رفض الطلب الثاني','94%','td','موافق','td','صحيح'],['متبرع سعد — خطر','رسالة تواصل شخصية','78%','td','موافق','tr','قيد المتابعة'],['طلب #2401 — أولوية','رفع للمستوى العاجل','71%','tr','مراجعة','tr','قيد الدراسة'],['مخزون الشفا — إشعار','طلب تزويد فوري','100%','td','موافق','ti','IoT مُفعَّل']].forEach(function(r){var tr=document.createElement('tr');tr.className='dr';var t1=document.createElement('td');t1.textContent=r[0];var t2=document.createElement('td');t2.textContent=r[1];var t3=document.createElement('td');t3.textContent=r[2];t3.style.cssText='font-weight:500;color:'+(parseFloat(r[2])>85?G2:AM);var t4=document.createElement('td');t4.appendChild(tag(r[3],r[4]));var t5=document.createElement('td');t5.appendChild(tag(r[5],r[6]));[t1,t2,t3,t4,t5].forEach(function(t){tr.appendChild(t);});tbl.appendChild(tr);});}
+function bImpact(){var o=withLg();mkC('c-sroi','line',['ق1 2023','ق2 2023','ق3 2023','ق4 2023','ق1 2024','ق2 2024'],[{label:'SROI الفعلي',data:[2.1,2.3,2.5,2.8,3.0,3.2],borderColor:G2,backgroundColor:'rgba(45,106,79,.1)',fill:true,tension:.4,pointRadius:4,pointBackgroundColor:G2},{label:'المستهدف 3.5',data:[3.5,3.5,3.5,3.5,3.5,3.5],borderColor:RD,borderDash:[5,5],borderWidth:1.5,pointRadius:0,fill:false}],o);var toc=document.getElementById('toc');[['المدخلات','تبرعات+كوادر+رقمنة','#DBEAFE','#1E40AF'],['الأنشطة','دعم+زيارات+تأهيل','#F3E8FF','#6B21A8'],['المخرجات','1,247 أسرة+3,847 ساعة',G4,G2],['النتائج','استقرار الأسرة+التعليم','#FEF3C7','#92400E'],['الأثر','SROI 3.2:1+234 أسرة مستقلة',G1,'#fff']].forEach(function(c,i){var d=document.createElement('div');d.style.cssText='background:'+c[2]+';border-radius:5px;padding:6px 8px;margin:3px 0';var t=document.createElement('div');t.style.cssText='font-size:11px;font-weight:500;color:'+c[3];t.textContent=c[0];var s=document.createElement('div');s.style.cssText='font-size:10px;color:'+c[3]+';opacity:.7;margin-top:1px';s.textContent=c[1];d.appendChild(t);d.appendChild(s);toc.appendChild(d);if(i<4){var ar=document.createElement('div');ar.style.cssText='text-align:center;color:'+MU+';font-size:11px';ar.textContent='↓';toc.appendChild(ar);}});var sb=document.getElementById('sat-b');sb.appendChild(pr('سرعة الاستجابة',85,G2));sb.appendChild(pr('جودة الدعم',79,G2));sb.appendChild(pr('سهولة التقديم',74,G3));sb.appendChild(pr('التواصل والمتابعة',68,GO2));sb.appendChild(pr('الشعور بالاحترام',91,G2));sb.appendChild(nf('i','ℹ الرضا العام 81% — الهدف 85% — الفجوة تُعالَج بأتمتة التواصل (م3)'));}
+function bRisk(){var tbl=document.getElementById('risk-tbl');tbl.appendChild(mkTh(['#','الخطر','الاحتمالية','الأثر','الحل']));[['1','تحديد وحدات Odoo المُفعَّلة','rm','متوسطة','rh','عالٍ','استكشاف APIs الشهر الأول'],['2','مقاومة موظفي الفروع للتغيير','rh','عالية','rh','عالٍ','ADKAR + تشغيل متوازٍ 4 أسابيع'],['3','فقدان بيانات أثناء هجرة Dataverse','rm','متوسطة','rh','عالٍ','نسخ احتياطية + هجرة فرع بفرع'],['4','تعارض بيانات التشغيل المتوازٍ','rm','متوسطة','rm','متوسط','البوابة القديمة للقراءة فقط'],['5','انتهاك PDPL أثناء نقل البيانات','rl','منخفضة','rh','عالٍ جداً','DPO + DPIA قبل كل هجرة'],['6','ضعف جودة بيانات Excel','rh','عالية','rm','متوسط','ورشة تنظيف في كل فرع'],['7','تجاوز ميزانية ربط APIs','rm','متوسطة','rm','متوسط','احتياطي 15% + ETL بديل'],['8','انقطاع الخدمة أثناء التحديث','rl','منخفضة','rh','عالٍ','صيانة أوقات منخفضة + rollback'],['9','تحيز AI في قرارات المستفيدين','rm','متوسطة','rh','عالٍ','مراجعة بشرية إلزامية لكل قرار'],['10','ارتفاع تكلفة بنية IoT','rm','متوسطة','rm','متوسط','بدء بفرعين ثم التوسع'],['11','تعقيد تخزين البيانات الضخمة','rl','منخفضة','rm','متوسط','Azure Data Lake تدريجي']].forEach(function(r){var tr=document.createElement('tr');tr.className='dr';if(r[2]==='rh')tr.style.background='#FFF8F8';var t1=document.createElement('td');t1.textContent=r[0];var t2=document.createElement('td');t2.textContent=r[1];if(r[2]==='rh')t2.style.fontWeight='500';var t3=document.createElement('td');t3.appendChild(mkTag(r[2],r[3]));var t4=document.createElement('td');t4.appendChild(mkTag(r[4],r[5]));var t5=document.createElement('td');t5.textContent=r[6];t5.style.cssText='color:'+MU+';font-size:10.5px';[t1,t2,t3,t4,t5].forEach(function(t){tr.appendChild(t);});tbl.appendChild(tr);});mkC('c-risk','doughnut',['عالي الأثر (6)','متوسط الأثر (3)','منخفض الأثر (2)'],[{data:[6,3,2],backgroundColor:[RD,AM,G2],borderWidth:2}],noSc());var rl=document.getElementById('risk-leg');[[RD,'عالي: 6'],[AM,'متوسط: 3'],[G2,'منخفض: 2']].forEach(function(l){var d=document.createElement('div');d.style.cssText='display:flex;align-items:center;gap:5px;margin:3px 0;font-size:10.5px';var dot=document.createElement('div');dot.style.cssText='width:8px;height:8px;border-radius:2px;background:'+l[0]+';flex-shrink:0';var t=document.createElement('div');t.textContent=l[1];d.appendChild(dot);d.appendChild(t);rl.appendChild(d);});var rn=document.getElementById('risk-nf');rn.appendChild(nf('e','⚡ الأولوية القصوى: مقاومة التغيير — ADKAR وإشراك مديري الفروع من اليوم الأول'));rn.appendChild(nf('e','🔒 الخطر القانوني: انتهاك PDPL — DPO من اليوم الأول، DPIA قبل كل هجرة (م11)'));rn.appendChild(nf('go','💡 11 خطراً مُحدداً مسبقاً — كل خطر له حل جاهز'));}
+function bInt(){var si=document.getElementById('sys-int');[['🏛','بوابة المستفيدين','biralriyadh.org.sa — م1','lv','مربوط'],['⚙','Odoo ERP','erp.albr.org — م2 REST API','lv','مربوط'],['📧','Microsoft 365','M365 + Power Platform','lv','مُعزَّز'],['💳','منصة جود','store.albr.sa — م4','lv','مربوط'],['📱','SMS 5052','م4 — مُزامَن مع CRM','lv','مربوط'],['📝','اخبرنا عن محتاج','م3 — يُغذّي Dataverse','lv','مربوط']].forEach(function(r){si.appendChild(irRow(r[0],r[1],r[2],r[3],r[4]));});var ni=document.getElementById('nat-int');[['🤝','إشراك','م8+م9','lv','مربوط'],['📊','نافع','م10 SROI','lv','مربوط'],['📢','بيان','إفصاح تلقائي','lv','مربوط'],['🔐','نفاذ','م9 — هيئة الحكومة','pl-st','قيد الربط']].forEach(function(r){ni.appendChild(irRow(r[0],r[1],r[2],r[3],r[4]));});var tbl=document.getElementById('init-tbl');tbl.appendChild(mkTh(['#','المبادرة','المنطقة','المرحلة','الحالة','التكامل']));[['1','ربط بوابة المستفيدين','ربط','الأولى','tr','قيد التنفيذ','biralriyadh+Dataverse'],['2','ربط Odoo ERP','ربط','الأولى','tr','قيد التنفيذ','Odoo REST API'],['3','أتمتة مسارات المستفيدين','ربط','الثانية','tg','مُخطط','Power Automate+SMS'],['4','ربط جود+SMS','ربط','الثانية','tg','مُخطط','store.albr.sa+Dataverse'],['5','لوحة Power BI الموحدة','بناء','الثانية','tr','قيد التنفيذ','Dataverse+Power BI'],['6','Power Apps للموظفين','بناء','الأولى','tr','قيد التنفيذ','Dataverse offline'],['7','CRM المتبرعين','بناء','الثانية','tg','مُخطط','Dataverse+جود'],['8','نظام المتطوعين','بناء','الثانية','td','مُنجَز','Power Apps+إشراك'],['9','تكامل المنصات الوطنية','بناء','الثالثة','tg','مُخطط','إشراك+نافع+بيان+نفاذ'],['10','قياس الأثر SROI','بناء','الثالثة','tg','مُخطط','Power BI+نافع'],['11','حوكمة PDPL','بناء','الأولى','td','مُنجَز','DPO+DPIA+Entra ID'],['12','AI لدعم القرار','بناء','الثانية','tr','قيد التنفيذ','Azure AI Services'],['13','IoT المستودعات','بناء','الثالثة','tg','مُخطط','أجهزة+Dataverse'],['14','Big Data تحليلي','بناء','الثالثة','tg','مُخطط','Azure Data Lake']].forEach(function(r){var tr=document.createElement('tr');tr.className='dr';var t1=document.createElement('td');t1.textContent=r[0];var t2=document.createElement('td');t2.textContent=r[1];t2.style.fontWeight='500';var t3=document.createElement('td');t3.appendChild(tag(r[2]==='ربط'?'ti':'ta',r[2]));var t4=document.createElement('td');t4.textContent=r[3];var t5=document.createElement('td');t5.appendChild(tag(r[4],r[5]));var t6=document.createElement('td');t6.textContent=r[6];t6.style.cssText='color:'+MU+';font-size:10px';[t1,t2,t3,t4,t5,t6].forEach(function(t){tr.appendChild(t);});tbl.appendChild(tr);});mkC('c-sync','bar',['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],[{data:[1420,1650,1380,1890,1720,890,1847],backgroundColor:G2,borderRadius:3}],BASE);}
+function bSmart(){var gl=document.getElementById('goals-list');[{n:1,title:'توحيد بيانات الفروع السبعة في مستودع مركزي',kpi:'95% من السجلات موحدة',time:'12 شهراً',prog:35,s:'tr',stxt:'قيد التنفيذ',clr:G2},{n:2,title:'ربط الأنظمة القائمة بصفر تدخل يدوي',kpi:'صفر نقل يدوي',time:'18 شهراً',prog:25,s:'tr',stxt:'قيد التنفيذ',clr:G2},{n:3,title:'لوحة مؤشرات موحدة للقيادة',kpi:'10 مؤشرات فورية',time:'12 شهراً',prog:40,s:'tr',stxt:'قيد التنفيذ',clr:G2},{n:4,title:'أتمتة مسارات المستفيدين — تقليل الدورة 50%',kpi:'تقليل دورة الطلب 50%',time:'18 شهراً',prog:0,s:'tg',stxt:'مُخطط',clr:G3},{n:5,title:'CRM تحليلي — 100% التبرعات مرصودة',kpi:'100% التبرعات',time:'18 شهراً',prog:0,s:'tg',stxt:'مُخطط',clr:G3},{n:6,title:'تكامل مع 4 منصات وطنية',kpi:'ربط 4 منصات',time:'24 شهراً',prog:50,s:'td',stxt:'مُنجَز جزئياً',clr:GO},{n:7,title:'SROI ≥ 3.5:1 موثق ومُرفَع لنافع',kpi:'SROI ≥ 3.5:1',time:'30 شهراً',prog:91,s:'td',stxt:'مُنجَز',clr:G2}].forEach(function(g){var c=document.createElement('div');c.className='gc';c.style.cssText='background:'+(g.prog>=80?G4:g.prog>0?'#FFF8F0':'#fff')+';border-color:'+g.clr;var top=document.createElement('div');top.className='gt';var num=document.createElement('div');num.className='gn';num.style.cssText='background:'+(g.prog>=80?G2:g.prog>0?AM:BD)+';color:'+(g.prog>0?'#fff':MU);num.textContent=g.n;var info=document.createElement('div');info.style.flex='1';var tt=document.createElement('div');tt.style.cssText='font-size:12px;font-weight:500;color:'+G1+';line-height:1.4';tt.textContent=g.title;var meta=document.createElement('div');meta.style.cssText='display:flex;gap:6px;margin-top:4px;flex-wrap:wrap';var kpi=document.createElement('span');kpi.style.cssText='font-size:10px;color:'+MU+';background:'+BG+';padding:1px 7px;border-radius:9px;border:.5px solid '+BD;kpi.textContent=g.kpi;var tim=document.createElement('span');tim.style.cssText='font-size:10px;color:'+G2+';background:'+G4+';padding:1px 7px;border-radius:9px;border:.5px solid '+BD;tim.textContent=g.time;meta.appendChild(kpi);meta.appendChild(tim);info.appendChild(tt);info.appendChild(meta);top.appendChild(num);top.appendChild(info);top.appendChild(tag(g.s,g.stxt));var bar=document.createElement('div');bar.className='gbar';var fill=document.createElement('div');fill.className='gfill';fill.style.cssText='width:'+g.prog+'%;background:'+g.clr;bar.appendChild(fill);var gft=document.createElement('div');gft.className='gft';gft.textContent='التقدم: '+g.prog+'%';c.appendChild(top);c.appendChild(bar);c.appendChild(gft);gl.appendChild(c);});mkC('c-radar','radar',['الاستراتيجية','العمليات','البيانات','البنية','الكوادر','التكامل'],[{label:'الحالي 2.1/5',data:[0.5,0.3,0.3,0.5,0.4,0.2],borderColor:RD,backgroundColor:'rgba(192,57,43,.15)',pointBackgroundColor:RD,pointRadius:4},{label:'الهدف 3.8/5',data:[0.9,0.8,0.8,0.9,0.8,0.76],borderColor:G2,backgroundColor:'rgba(45,106,79,.12)',pointBackgroundColor:G2,pointRadius:4}],{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},boxWidth:10,padding:7}}},scales:{r:{min:0,max:1,ticks:{display:false},grid:{color:BD},pointLabels:{font:{size:10},color:MU}}}});var tl=document.getElementById('timeline');[[G2,'المرحلة الأولى (0–12 شهر)','أهداف 1، 3 — PDPL+إشراك'],[AM,'المرحلة الثانية (6–18 شهر)','أهداف 2، 4، 5 — ربط+CRM+أتمتة'],[GO,'المرحلة الثالثة (18–30 شهر)','الهدف 6 كاملاً + SROI 3.5:1']].forEach(function(r){var d=document.createElement('div');d.style.cssText='display:flex;align-items:flex-start;gap:7px;padding:6px 0;border-bottom:.5px solid #EEF5F0';var dot=document.createElement('div');dot.style.cssText='width:8px;height:8px;border-radius:2px;background:'+r[0]+';flex-shrink:0;margin-top:3px';var info=document.createElement('div');var t=document.createElement('div');t.style.cssText='font-size:11.5px;font-weight:500;color:'+TX;t.textContent=r[1];var s=document.createElement('div');s.style.cssText='font-size:10px;color:'+MU+';margin-top:1px';s.textContent=r[2];info.appendChild(t);info.appendChild(s);d.appendChild(dot);d.appendChild(info);tl.appendChild(d);});}
+var PARAMS={brs:7,ex:6,rp:4,co:3,sal:75000,inv:239800};
+function calcRoi(){var wk=PARAMS.brs*(PARAMS.ex+PARAMS.rp+PARAMS.co);var ann=wk*42;var sr=Math.round(ann*(PARAMS.sal/1800));var pay=Math.round(PARAMS.inv/((sr+80000)/12));document.getElementById('k-hrs').textContent=wk;document.getElementById('k-sh').textContent=ann.toLocaleString('en-US');document.getElementById('k-sr').textContent=sr.toLocaleString('en-US');document.getElementById('k-pay').textContent=pay;if(CH['c-roi']){CH['c-roi'].data.datasets[0].data=[PARAMS.inv,PARAMS.inv+15000,PARAMS.inv+30000,PARAMS.inv+45000,PARAMS.inv+60000];CH['c-roi'].data.datasets[1].data=[Math.round(sr+80000),Math.round((sr+80000)*2),Math.round((sr+80000)*3),Math.round((sr+80000)*4),Math.round((sr+80000)*5)];CH['c-roi'].update();}}
+function bRoi(){var ci=document.getElementById('calc-in');[['ex','ساعات Excel الأسبوعية (لكل فرع)',1,20,6],['rp','ساعات التقارير اليدوية',1,15,4],['co','ساعات التنسيق الورقي',1,10,3],['sal','راتب الموظف الإداري (سنوي)',30000,150000,75000],['inv','الاستثمار المطلوب (ريال)',100000,500000,239800]].forEach(function(r){var row=document.createElement('div');row.className='calc-r';var l=document.createElement('div');l.className='calc-l';l.textContent=r[1];var ctrl=document.createElement('div');ctrl.style.cssText='flex:1;display:flex;align-items:center;gap:9px';var inp=document.createElement('input');inp.type='range';inp.min=r[2];inp.max=r[3];inp.value=r[4];inp.step=(r[0]==='sal'||r[0]==='inv')?5000:1;inp.style.flex='1';var ve=document.createElement('div');ve.className='calc-v';ve.textContent=(r[0]==='sal'||r[0]==='inv')?parseInt(r[4]).toLocaleString('en-US'):r[4];inp.oninput=function(){PARAMS[r[0]]=parseInt(this.value);ve.textContent=(r[0]==='sal'||r[0]==='inv')?PARAMS[r[0]].toLocaleString('en-US'):this.value;calcRoi();};ctrl.appendChild(inp);ctrl.appendChild(ve);row.appendChild(l);row.appendChild(ctrl);ci.appendChild(row);});mkC('c-waste','doughnut',['إدخال Excel','تقارير مجمّعة','تنسيق بين الفروع','أخرى'],[{data:[46,29,18,7],backgroundColor:[RD,AM,G2,MU],borderWidth:2}],noSc());var o=withLg();o.scales.y.ticks.callback=function(v){return (v/1000).toFixed(0)+'k';};mkC('c-roi','bar',['السنة 1','السنة 2','السنة 3','السنة 4','السنة 5'],[{label:'التكاليف التراكمية',data:[239800,254800,269800,284800,299800],backgroundColor:RD+'88',borderRadius:4},{label:'العوائد التراكمية',data:[366650,733300,1099950,1466600,1833250],backgroundColor:G2+'88',borderRadius:4}],o);}
+function bQw(){if(document.getElementById('phases-list').children.length)return;var pl=document.getElementById('phases-list');[{week:'الأسبوع 1-2',clr:G2,bg:G4,title:'Power Apps في فرع شمال الرياض',cost:'0 ريال إضافي',items:['Power Apps على M365 الحالي','موظفو الفرع يُدخلون بدل Excel','مزامنة تلقائية مع Dataverse','تشغيل متوازٍ مع Excel 4 أسابيع']},{week:'الأسبوع 3-4',clr:AM,bg:'#FFF8E1',title:'التوسع لفرعَي الفيحاء والعريجاء',cost:'صفر',items:['نفس التطبيق — فروع جديدة بضغطة','المقارنة بين 3 فروع فورية','اكتشاف أول حالة ازدواجية','تقرير Proof of Concept جاهز']},{week:'نهاية الشهر',clr:G1,bg:G1,title:'لقاء القرار — بيانات حقيقية',cost:'قرار الاستمرار',items:['كم ساعة وفّرنا؟ — رقم حقيقي','كم حالة ازدواجية اكتشفنا؟','ما رأي الموظفين؟ — استبيان','هل نكمل باقي الفروع؟'],dark:true}].forEach(function(ph){var c=document.createElement('div');c.className='qp';c.style.cssText='background:'+ph.bg+';border-color:'+ph.clr;var hdr=document.createElement('div');hdr.className='qh';var badge=document.createElement('span');badge.className='qb';badge.style.cssText='background:'+ph.clr+';color:#fff';badge.textContent=ph.week;var tt=document.createElement('div');tt.style.cssText='font-size:12.5px;font-weight:500;color:'+(ph.dark?'#fff':TX);tt.textContent=ph.title;var cost=document.createElement('div');cost.style.cssText='margin-right:auto;font-size:11px;color:'+(ph.dark?GO2:G2)+';font-weight:500';cost.textContent=ph.cost;hdr.appendChild(badge);hdr.appendChild(tt);hdr.appendChild(cost);var items=document.createElement('div');items.className='qi';ph.items.forEach(function(it){var d=document.createElement('div');d.className='qitem';d.style.background=ph.dark?'rgba(255,255,255,.08)':'rgba(255,255,255,.7)';var ic=document.createElement('div');ic.className='qic';ic.style.cssText='background:'+(ph.dark?'rgba(255,255,255,.15)':G4)+';color:'+(ph.dark?'#fff':G2);ic.textContent='✓';var txt=document.createElement('div');txt.style.cssText='color:'+(ph.dark?'rgba(255,255,255,.85)':TX)+';line-height:1.4';txt.textContent=it;d.appendChild(ic);d.appendChild(txt);items.appendChild(d);});c.appendChild(hdr);c.appendChild(items);pl.appendChild(c);if(!ph.dark){var arr=document.createElement('div');arr.style.cssText='text-align:center;color:'+MU+';font-size:13px;padding:3px 0';arr.textContent='↓';pl.appendChild(arr);}});var wm=document.getElementById('win-m');[['1,764','ساعة/سنة','من إلغاء الإدخال اليدوي',G2],['3+','حالات ازدواجية','مكتشفة الشهر الأول',AM],['95%','هدف الرضا','للموظفين عن النظام',GO]].forEach(function(m){var d=document.createElement('div');d.style.cssText='text-align:center;padding:10px;background:'+G4+';border-radius:7px;border:.5px solid '+BD;var n=document.createElement('div');n.style.cssText='font-size:20px;font-weight:500;color:'+m[3];n.textContent=m[0];var l=document.createElement('div');l.style.cssText='font-size:11.5px;font-weight:500;color:'+TX+';margin-top:3px';l.textContent=m[1];var s=document.createElement('div');s.style.cssText='font-size:10px;color:'+MU+';margin-top:2px';s.textContent=m[2];d.appendChild(n);d.appendChild(l);d.appendChild(s);wm.appendChild(d);});var qr=document.getElementById('qw-risks');[['مقاومة الموظفين','التشغيل المتوازٍ مع Excel 4 أسابيع',AM],['ضعف بيانات Excel الموروثة','ورشة تنظيف يوم كامل قبل الهجرة',G2],['انقطاع الإنترنت','Power Apps يعمل Offline — مزامنة عند الاتصال',G2]].forEach(function(r){var d=document.createElement('div');d.style.cssText='display:flex;gap:8px;padding:7px 0;border-bottom:.5px solid #EEF5F0;align-items:flex-start;font-size:11.5px';var dot=document.createElement('div');dot.style.cssText='width:7px;height:7px;border-radius:50%;background:'+r[2]+';flex-shrink:0;margin-top:3px';var txt=document.createElement('div');var t=document.createElement('div');t.style.cssText='font-weight:500;color:'+TX;t.textContent=r[0];var s=document.createElement('div');s.style.cssText='color:'+MU+';margin-top:2px;font-size:10.5px';s.textContent=r[1];txt.appendChild(t);txt.appendChild(s);d.appendChild(dot);d.appendChild(txt);qr.appendChild(d);});}
+
+/* ── الإصلاح الجوهري: تحديث التبرعات من متغير JS لا من النص ── */
+window.addEventListener('load',function(){
+  LDd['home']=1;
+  bHome();
+  var t=document.getElementById('sync-t');
+  setInterval(function(){
+    DON_AMOUNT += Math.floor(Math.random()*70)+20;
+    var d=document.getElementById('k-don');
+    if(d) d.textContent = DON_AMOUNT.toLocaleString('en-US');
+    if(t) t.textContent='تحديث مباشر — '+new Date().toLocaleTimeString('ar-SA',{hour:'2-digit',minute:'2-digit'});
+  },7000);
+});
+</script>
